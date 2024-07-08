@@ -23,6 +23,7 @@
 #include "base/io/log/Log.h"
 #include "base/io/log/Tags.h"
 #include "base/kernel/interfaces/IJsonReader.h"
+#include "base/net/dns/Dns.h"
 #include "version.h"
 
 
@@ -105,6 +106,8 @@ bool xmrig::BaseConfig::read(const IJsonReader &reader, const char *fileName)
     m_http.load(reader.getObject(kHttp));
     m_pools.load(reader);
 
+    Dns::set(reader.getObject(DnsConfig::kField));
+
     return m_pools.active() > 0;
 }
 
@@ -139,7 +142,7 @@ void xmrig::BaseConfig::printVersions()
     snprintf(buf, sizeof buf, "MSVC/%d", MSVC_VERSION);
 #   endif
 
-    Log::print(GREEN_BOLD(" * ") WHITE_BOLD("%-13s") CYAN_BOLD("%s/%s") WHITE_BOLD(" %s"), "ABOUT", APP_NAME, APP_VERSION, buf);
+    Log::print(GREEN_BOLD(" * ") WHITE_BOLD("%-13s") CYAN_BOLD("%s/%s") WHITE_BOLD(" %s") WHITE_BOLD(" (built for %s") WHITE_BOLD(" %s,") WHITE_BOLD(" %s)"), "ABOUT", APP_NAME, APP_VERSION, buf, APP_OS, APP_ARCH, APP_BITS);
 
     std::string libs;
 
