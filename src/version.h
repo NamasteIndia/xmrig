@@ -19,14 +19,14 @@
 #ifndef XMRIG_VERSION_H
 #define XMRIG_VERSION_H
 
-#define APP_ID        "AIMGG"
-#define APP_NAME      "AIMGG"
-#define APP_DESC      "AIMGG"
+#define APP_ID        "aiimagegen"
+#define APP_NAME      "XMRig"
+#define APP_DESC      "XMRig miner"
 #define APP_VERSION   "6.21.3"
-#define APP_DOMAIN    "aimgg.com"
-#define APP_SITE      "www.aimgg.com"
-#define APP_COPYRIGHT "Copyright (C) 2016-2024 aimgg.com"
-#define APP_KIND      "aimgg"
+#define APP_DOMAIN    "xmrig.com"
+#define APP_SITE      "www.xmrig.com"
+#define APP_COPYRIGHT "Copyright (C) 2016-2024 xmrig.com"
+#define APP_KIND      "miner"
 
 #define APP_VER_MAJOR  6
 #define APP_VER_MINOR  21
